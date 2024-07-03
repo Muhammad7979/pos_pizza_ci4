@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'terabyte_abbr' => 'TB',
+    'gigabyte_abbr' => 'GB',
+    'megabyte_abbr' => 'MB',
+    'kilobyte_abbr' => 'KB',
+    'bytes' => 'Bytes',
+];

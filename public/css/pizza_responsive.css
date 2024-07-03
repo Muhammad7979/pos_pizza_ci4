@@ -1,0 +1,128 @@
+
+
+@media (min-width:1080px) and (max-width:1560px){
+
+	.inner_container{width: 100%;}	
+	.pizza_menu_block .logo img{max-width: 50%;}
+
+	.pizza_menu_block .menu_categories{padding: 30px 30px;box-sizing: border-box;}
+	.pizza_menu_block .menu_categories ul li span{font-size: 20px;padding: 10px 40px}
+
+
+	.pizza_menu_block .menu_categories ul li:nth-child(1){width: 24%;}
+	.pizza_menu_block .menu_categories ul li:nth-child(2){width: 14%;}
+	.pizza_menu_block .menu_categories ul li:nth-child(3){width: 19%;}
+	.pizza_menu_block .menu_categories ul li:nth-child(4){width: 15%;}
+
+
+
+	.pizza_menu_block .menu_items{padding: 20px 30px;box-sizing: border-box;}
+	.pizza_menu_block .menu_items ul li{padding: 0px;padding-bottom: 20px;}
+
+
+	.menu_items .flavors{width: 22%;}
+
+	.menu_items .size{width: 20%;padding: 10px 0px;}
+	.menu_items .price{width: 13%;}
+	.menu_items .quantity{width: 20%;}
+	.menu_items .order_customize{width: 22%;}
+
+	.toggle{margin: 0 0 0.5rem;}
+
+	.menu_items .quantity .number{margin: 0px;}
+
+
+	.menu_items .flavors span{font-size: 15px;}
+	.menu_items .flavors p{font-size: 13px;}
+
+	.toggle input + label{width: 40px;height: 40px;line-height: 40px;font-size: 16px;}
+
+	.menu_items .price span{font-size: 16px;}
+
+	.menu_items .quantity .number .minus, .number .plus{width: 18px;height: 18px;line-height: 18px;font-size: 22px;}
+	.menu_items .quantity .number input{font-size: 16px;width: 45px;}
+
+
+
+	.menu_items .order_customize button:first-of-type{margin-right: 4px;}
+
+	.menu_items .order_customize button{font-size: 15px;padding: 10px 12px;}
+
+
+
+	/*	modal content*/
+
+
+	.modal-content{max-width: 860px;padding: 30px;}
+	.pizza_popup_header{margin-bottom: 10px;}
+	.pizza_popup_header .pizza_name span{font-size: 30px;}
+	.pizza_popup_header .pizza_name p{font-size: 18px;line-height: 26px;}
+
+	.add_more_block .left span{font-size: 20px;}
+	.add_more_block .right span{font-size: 20px;}
+
+	.add_more_block .right .topping_block .extra_topping ul li{width: 45%;padding: 2px 5px;}
+
+	.extra_topping ul li label{font-size: 14px;padding-left: 40px;/*padding-top: 16px;*/}
+
+	.extra_topping ul li .check{width: 18px;height: 18px;line-height: 18px;left: 18px;}
+
+	.extra_topping ul li .check::before{width: 12px;height: 12px;top: 3px;left: 3px;}
+
+
+	.add_more_block .right .pop_up_total_price button{font-size: 22px;}
+	.add_more_block .right .pop_up_total_price span{font-size: 30px;}
+
+	.add_more_block .right .pop_up_textarea textarea{font-size: 17px;}
+
+
+
+	/*	theme 2 css*/
+
+
+	.order_table{padding: 0px 20px;box-sizing: border-box;}
+	.order_table table tr{line-height: 40px;}
+	.order_table table th{font-size: 20px;    padding: 5px 5px;}
+	.order_table table td{font-size: 16px;  padding: 5px 15px;}
+	.order_table table td button{font-size: 16px; width: 95px; height: 40px;}
+
+	.order_status .status_category ul li{width: auto!important;}
+	.order_status .menu_categories ul li .category_btn{font-size: 25px;width: 220px;}
+
+
+
+
+	/*theme 3 css*/
+	
+	.order_status .new_status_menu ul li{width: 49%!important;}
+	
+	.order_summary .left_in_process_table th{font-size: 20px;padding: 10px;padding-bottom: 30px;}
+	.order_summary .right_complete_table th{font-size: 20px;padding: 10px;padding-bottom: 30px;}
+	
+	.order_summary .left_in_process_table td{font-size: 18px;padding: 10px;}
+	.order_summary .right_complete_table td{font-size: 18px;padding: 10px}
+	
+	
+	.order_status .menu_categories ul li span{ width: 120px;height: 30px;line-height: 30px;}
+	
+
+
+}
+
+
+@media (min-width:1280px) and (max-width:1560px){
+
+	.modal-content{max-width: 1000px;padding: 30px;}
+
+	/*	theme 2 css*/
+
+
+
+	.order_table table th{font-size: 24px;}
+	.order_table table td{font-size: 22px;}
+
+
+}
+
+
+

@@ -1,0 +1,985 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/*/ HTML5 display-role reset for older browsers /*/
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background:#000;
+    font-family: 'Lato', sans-serif;
+    color:#000d1f;
+    overflow: hidden;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a { color:#4bac4c; text-decoration:none; transition: background-color 0.4s ease 0s, border 0s ease 0s, color 0.4s ease 0s, opacity 0.4s ease-in-out 0s; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+/*font-face*/
+
+@font-face {
+    font-family: "Stem W03 Regular";
+    src: url('../font-face/stem.eot') format('embedded-opentype'), 
+    url('../font-face/stem.woff') format('woff'), 
+    url('../font-face/stem.woff2') format('woff2'),
+    url('../font-face/stem.ttf') format('truetype'), 
+    url('../font-face/stem.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sans Culottes W01 Regular";
+    src: url('../font-face/culottes.eot') format('embedded-opentype'), 
+    url('../font-face/culottes.woff') format('woff'), 
+    url('../font-face/culottes.woff2') format('woff2'),
+    url('../font-face/culottes.ttf') format('truetype'), 
+    url('../font-face/culottes.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*css starting*/
+
+.tehzeeb_pizza_menu{width: 100%;}
+.inner_container{max-width: 1200px;margin: 0 auto;box-sizing: border-box;}
+.inner_container_width{max-width: 1700px !important;}
+
+.pizza_menu_block {width: 100%;background-image: url(../images/pizza_menu_bg.jpg);
+    background-repeat: no-repeat;background-size: cover;
+    /*padding: 0px 0px 30px 0px;*/ height: 100vh}
+
+.pizza_menu_block .logo{width: 100%;margin: 0px 0px;text-align: center; padding-top: 5px; }
+.pizza_menu_block .logo img{max-width: 100%;}
+
+.pizza_menu_block .menu_categories{width: 100%;padding: 20px 0px; display: inline-block;font-family: "Sans Culottes W01 Regular";}
+.pizza_menu_block .menu_categories ul{position: relative;}
+.pizza_menu_block .menu_categories ul li{display: inline-block;width:20%;text-align: center;}
+.pizza_menu_block .menu_categories ul li span{padding: 10px 30px;background-color: #fea741;color: #000;font-size: 18px;border-radius: 50px;text-transform: uppercase;}
+
+
+
+.pizza_menu_block .menu_items{width: 100%;padding: 20px 0px;box-sizing: border-box;    height: 677px;
+    overflow-y: auto;padding-right: 15px;scrollbar-color: #fea741 #25252500; scrollbar-width: thin;}
+.pizza_menu_block .menu_items ul{position: relative;}
+.pizza_menu_block .menu_items ul li{display: inline-block;width: 100%;padding: 9px;box-sizing: border-box;vertical-align: top;}
+
+.menu_items .flavors{width: 20%;display: inline-block;float: left;box-sizing: border-box;}
+.menu_items .flavors img{float: left;max-width: 35%;}
+
+.menu_items .flavors .pizza_description{float: right; width: calc(100% - 38%); margin-top: 22px;}
+.menu_items .flavors span{color: #fea741;font-size: 20px;padding-bottom: 10px;display: block; font-family: "Sans Culottes W01 Regular";}
+.menu_items .flavors p{
+    color:#fff;font-size: 16px;font-family: "Stem W03 Regular";
+    text-overflow: ellipsis;overflow: hidden;
+    /*white-space: nowrap;*/
+}
+
+.menu_items .size{width: 21%;display: inline-block;    padding: 20px 0px;box-sizing: border-box;}
+
+
+.menu_items .price{width: 21%;display: inline-block;text-align: center;    padding: 20px 0px;padding-right: 10px;box-sizing: border-box;}
+.menu_items .price span{color:#fff;font-size: 20px;font-family: "Stem W03 Regular"}
+
+.menu_items .quantity{width: 19%;display: inline-block; padding: 20px 0px;box-sizing: border-box; text-align: center;}
+
+
+.menu_items .order_customize{width: 18%;display: inline-block;    padding: 20px 0px;text-align: center;box-sizing: border-box;}
+.menu_items .order_customize button{padding: 10px 20px;background-color: #fea741;color: #000;font-size: 18px;border-radius: 50px;border: 0;font-family: "Stem W03 Regular";font-weight: 600;outline: 0;} 
+
+.menu_items .order_customize button:first-of-type{margin-right: 10px;}
+.menu_items .order_customize button:last-of-type{margin-right: 0px;}
+
+.menu_items .order_customize button:hover{background-color:#ee9c3c}
+
+.menu_items .order_customize button::-moz-focus-inner {border:0;}
+
+
+
+
+.pizza_menu_block ::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.pizza_menu_block ::-webkit-scrollbar-track {
+    background: #25252500;
+}
+
+
+.pizza_menu_block ::-webkit-scrollbar-thumb {
+    background: #fea741;
+}
+
+
+.pizza_menu_block ::-webkit-scrollbar-thumb:hover {
+    background: #e29337;
+}
+
+.toggle {
+    margin: 0 0 1.5rem;
+    box-sizing: border-box;
+    font-size: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: center;
+}
+.toggle input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -9999px;
+}
+.toggle input + label {
+    border: 1px solid transparent;
+    font-family: "Stem W03 Regular";
+    width: 50px;height: 50px;line-height: 50px; border-radius: 50px;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    transition: border-color .15s ease-out,  color .25s ease-out,  background-color .15s ease-out, box-shadow .15s ease-out;
+    /* ADD THESE PROPERTIES TO SWITCH FROM AUTO WIDTH TO FULL WIDTH */
+    /*flex: 0 0 50%; display: flex; justify-content: center; align-items: center;*/
+    /* ----- */
+}
+.toggle input + label:first-of-type {
+    outline: 0;
+
+}
+.toggle input + label:last-of-type {
+
+    outline: 0;
+
+}
+.toggle input:hover + label {
+    border-color: #213140;
+}
+.toggle input:checked + label {
+
+    color: #FFF;
+
+    border: 1px solid #fea741;
+    z-index: 1;
+
+}
+.toggle input:focus + label {
+/*
+outline: dotted 1px #CCC;
+outline-offset: .45rem;
+*/
+}
+
+
+
+@media (max-width: 800px) {
+    .toggle input + label {
+        padding: .75rem .25rem;
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* STYLING FOR THE STATUS HELPER TEXT FOR THE DEMO */
+.status {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.status span {
+    font-weight: 600;
+    color: #B6985A;
+}
+.status span:first-of-type {
+    display: inline;
+}
+.status span:last-of-type {
+    display: none;
+}
+@media (max-width: 800px) {
+    .status span:first-of-type {
+        display: none;
+    }
+    .status span:last-of-type {
+        display: inline;
+    }
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 3%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    overflow: hidden;
+}
+
+/* Modal Content */
+.modal-content {
+    background-image: url(../images/Tehzeeb-popup_bg.jpg);
+    background-repeat: no-repeat;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #3a3a3d;
+    max-width: 1250px;
+    overflow: auto;
+    box-sizing: border-box;
+    position: relative;
+    display: table;
+    margin: auto auto calc(50vh - 274px) auto;
+}
+
+/* The Close Button */
+.close  {
+  position: absolute;top: -16px;right: -16px;cursor: pointer;opacity: 0.9;}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+    opacity: 1;
+}
+.checkoutClose  {
+  position: absolute;top: -16px;right: -16px;cursor: pointer;opacity: 0.9;}
+
+.checkoutClose:hover,
+.checkoutClose:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+    opacity: 1;
+}
+
+
+
+.pizza_popup_header{width: 100%;box-sizing: border-box;    display: inline-block;margin-bottom: 15px;}
+.pizza_popup_header .image{float:left;width: 16%}
+.pizza_popup_header .image img{max-width: 100%}
+.pizza_popup_header .pizza_name{float: right;width: 80%;padding: 20px 0px;
+    background-image: url(../images/bottom_line.png);background-repeat: no-repeat;
+    background-position: bottom;    background-position: -3px 122px;padding-bottom: 40px;   
+    background-size: 100%;
+}
+.pizza_popup_header .pizza_name span{
+    font-size: 40px;color: #fea741;font-family: "Sans Culottes W01 Regular";
+    margin-bottom: 10px;display: inline-block;
+    padding: 20px;
+}
+.pizza_popup_header .pizza_name p{font-size: 20px;color: #fff;}
+
+
+.add_more_block{display: inline-block;width: 100%;padding: 20px 0px;padding-bottom: 0px;}
+.add_more_block .left{float: left;width: 17%;box-sizing: border-box;}
+.add_more_block .left .pop_up_quantity{display: block;}
+.add_more_block .left span{color: #fea741;font-size: 26px;font-family: "Sans Culottes W01 Regular";padding-bottom: 20px;display: block;}
+.add_more_block .left .half_and_half{display: block;}
+.add_more_block .left .pop_up_add_flavors{}
+
+
+.add_more_block .right{
+    float: right;width: 81%;box-sizing: border-box;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #fea741 #25252500; scrollbar-width: thin;
+}
+.add_more_block .right span{color: #fea741;font-size: 26px;font-family: "Sans Culottes W01 Regular";;padding-bottom: 20px;display: block;}
+.add_more_block .right .topping_block{width: 100%;display: inline-block;padding-bottom: 20px;}
+.add_more_block .right .topping_block .extra_topping{display: inline-block;width: 49%;margin-bottom: 10px;}
+.add_more_block .right .topping_block .extra_topping_two{display: inline-block;}
+
+.add_more_block .right .topping_block .extra_topping ul{
+   /* height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #fea741 #25252500; scrollbar-width: thin;*/
+}
+.add_more_block .right .topping_block .extra_topping ul li{width: 46%;padding: 8px 7px;}
+
+.add_more_block .right .pop_up_textarea{clear: both;width: 60%;float: left;}
+.add_more_block .right .pop_up_textarea textarea{width: 100%;resize: none;outline: 0;border: 1px solid #fea741;background-color: transparent;    box-sizing: border-box; padding-left: 10px;padding: 10px;font-size: 20px;color: #fff;}
+
+.add_more_block .right .pop_up_textarea textarea::placeholder{font-size: 20px;color: #fff;}
+
+.add_more_block .right .pop_up_total_price{float: right;width: 35%;text-align: center;padding-top: 10px;}
+.add_more_block .right .pop_up_total_price button{font-family: "Sans Culottes W01 Regular";padding: 5px 30px;
+background-color: #fea741;
+color: #000;
+font-size: 24px;
+border-radius: 50px;
+border: 0;
+font-weight: 600;
+margin-bottom: 20px;}
+.add_more_block .right .pop_up_total_price span{display: block;font-size: 34px;color: #fff; font-family: "Sans Culottes W01 Regular";text-transform: uppercase;padding-bottom: 0px;}
+
+
+.extra_topping ul li{
+
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.extra_topping ul li input[type=checkbox]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.extra_topping ul li label{
+    display: block;
+    position: relative;
+    font-size: 14px;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 7px;
+    z-index: 9;
+    cursor: pointer;
+    -webkit-transition: all 0.25s linear;
+    color: #fff;
+    border: 1px solid transparent;
+
+}
+
+.extra_topping ul li:hover label{
+    color: #FFFFFF;
+}
+
+.extra_topping ul li .check{
+    display: block;
+    position: absolute;
+    border: 2px solid #fea741;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    top: 16px;
+    left: 20px;
+    z-index: 5;
+    transition: border .25s linear;
+    -webkit-transition: border .25s linear;
+}
+
+.extra_topping ul li:hover .check {
+
+}
+
+.extra_topping ul li .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 13px;
+    width: 13px;
+    top: 4px;
+    left: 4px;
+    margin: auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+}
+
+.extra_topping input[type=checkbox]:checked ~ .check {
+    /*  border: 2px solid #fea741;*/
+}
+
+.extra_topping input[type=checkbox]:checked ~ .check::before{
+    background: #fea741;
+}
+
+.extra_topping input[type=checkbox]:checked ~ label{
+    color: #fea741; border: 1px solid #fea741;border-radius: 50px;
+}
+
+.toggle_two{justify-content: flex-start}
+
+
+.crust_label{
+    width: 70px !important;
+}
+    
+.quantity .number{ margin: 10px }
+
+.number .minus, .quantity .plus {cursor:pointer; }
+
+.quantity .minus, .quantity .plus{
+    width:20px;
+    height:20px;
+    background:transparent;
+    border-radius:50px;
+    padding:12px;
+    border:1px solid #fea741;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+.quantity .number input{
+    height:34px;
+    width: 60px;
+    text-align: center;
+    font-size: 20px;
+    border:0px solid #ddd;
+    border-radius:4px;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    color: #fff;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+
+/*order-status css*/
+
+
+/*.order_status .menu_categories ul{text-align: center;}
+.order_status .menu_categories ul li{padding: 0px 20px;width: auto;}
+.order_status .menu_categories ul li span{display: block; width: 220px;height: 50px;line-height: 50px;padding: 0px;}
+
+
+.order_table{width: 100%;}
+.order_table table{ border-collapse: separate;   border-spacing: 0 0.9em;}
+.order_table table tbody{display: block; height: 557px; overflow-y: auto; scrollbar-color: #fea741#252525;scrollbar-width: thin;}
+.order_table table thead{display: table; width: 100%; table-layout: fixed;}
+.order_table table .header{background-color: transparent;}
+.order_table table tr{ line-height:100px;vertical-align: top;background-color: rgba(255,255,255,0.1)}
+.order_table table th{font-size: 30px;color: #fea741; font-family: "Sans Culottes W01 Regular";}
+.order_table table td{font-size: 20px;color: #fff;padding: 15px 25px; text-align: center;line-height: 26px;vertical-align: middle;  font-family: "Stem W03 Regular";}
+
+.order_table table td button{   width: 105px;height: 40px;line-height: 40px;text-transform: uppercase;font-weight: 600;
+    background-color: #fea741;
+    color: #000;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 0;
+    font-family: "Sans Culottes W01 Regular";
+    outline: 0;
+   margin-bottom: 15px;}
+
+.order_table table td button:last-child{margin-bottom: 0px;}
+.order_status .menu_categories{padding: 20px 0px;}*/
+
+.order_status .menu_categories ul{text-align: center;}
+.order_status .menu_categories ul li{padding: 0px 10px;width: auto;}
+.order_status .menu_categories ul li .category_btn{
+    width: 240px;
+    padding: 10px 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #fea741;
+    color:#000;
+    font-size: 30px;
+    border-radius: 50px;
+    border: 0;
+    font-family: "Sans Culottes W01 Regular";
+    outline: 0;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.order_status .menu_categories ul li .category_btn:hover{
+    background-color: #d98e37;;
+}
+
+.order_status .menu_categories ul li .category_btn::-moz-focus-inner {border:0;}
+
+
+
+.order_table{width: 100%;}
+.order_table table{ border-collapse: separate; width:100%;}
+.order_table table .header{background-color: transparent;}
+.order_table table tr{ line-height:100px;vertical-align: top;/*background-color: 
+    rgba(32, 23, 16, 0.7); */margin-bottom: 15px;}
+.order_table table th{font-size: 24px;color: #fea741;/*padding: 10px;*/ width: 10%;}
+.order_table table td{font-size: 22px;color: #fff;padding: 10px 25px; 
+    text-align: center;line-height: 20px; vertical-align: middle; line-height: 35px;}
+.production_order_table table tr.hidehr td{text-align: right;}
+.order_table table td button{   width: 130px;height: 43px;line-height: 40px;
+    text-transform: uppercase;font-weight: 600;
+    background-color: #fea741;
+    color: #000;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 0;
+    font-family: "Stem W03 Regular";
+    outline: 0;
+    text-align: center;
+    margin-bottom: 15px;}
+.order_table table td button:hover{
+    background-color: #d98e37;
+}
+.order_table table td button::-moz-focus-inner {border:0;}
+.order_table table td button:last-child{margin-bottom: 0px;}
+.order_status .menu_categories{padding-bottom: 10px;}
+
+
+.order_table  tbody {
+    display:block;
+    height:800px;
+    overflow-y:auto;
+    scrollbar-color: #fea741 #25252500; scrollbar-width: thin;
+}
+.order_table  thead, .order_table  tbody tr {
+    display:table;
+    width:100%;
+    /*table-layout:fixed;*/
+}
+
+
+.checkout_table{width: 100%;}
+.checkout_table table{ border-collapse: separate; }
+.checkout_table table .header{background-color: transparent;}
+.checkout_table table tr{ 
+    line-height:100px;vertical-align: top;background-color: 
+    rgba(255,255,255,0.1); margin-bottom: 13px;
+}
+
+.checkout_table table tr:last-child, 
+.checkout_table table tr:nth-last-child(2)
+{ 
+    margin-bottom: 0px;
+}
+
+
+.order_table table tr:last-child
+/*.order_table table tr:nth-last-child(2)*/
+/*.order_table table tr:nth-last-child(3)*/
+{ 
+    margin-bottom: 0px;
+}
+
+/*.order_table table tr:last-child
+{ 
+    margin-top: 0px;
+}*/
+
+.order_table .hidehr{
+    margin-top: -15px; border-top: 1px solid rgb(10, 10, 13);
+}
+
+.order_table .hidehr td{
+    /*text-align: left;*/
+    padding: 15px;
+    line-height: 1.3em;
+    word-wrap: break-word;
+}
+.order_table .hidehr td span{
+    color: #fea741;
+    font-weight: 600;
+}
+
+
+.checkout_table .hidehr{
+    margin-top: -15px; border-top: 1px solid rgb(10, 10, 13);
+}
+
+.checkout_table .hidehr td{
+    text-align: left;
+    padding: 20px;
+    line-height: 1.3em;
+    word-wrap: break-word;
+}
+.checkout_table .hidehr td span{
+    color: #fea741;
+}
+
+.checkout_table table tr:last-child
+{ 
+    margin-top: 0px;
+}
+
+.checkout_table table th{font-size: 24px;color: #fea741;padding: 10px;}
+.checkout_table table td{font-size: 20px;color: #fff;padding: 12px 12px; 
+    text-align: center;line-height: 20px;vertical-align: middle;}
+.checkout_table table td button{   
+    width: 100px;height: 40px;
+    text-transform: uppercase;font-weight: 600;
+    background-color: #fea741;
+    color: #000;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 0;
+    font-family: "Stem W03 Regular";
+    outline: 0;
+    text-align: center;
+    margin-bottom: 15px;}
+.checkout_table table td button:hover{
+    background-color: #d98e37;
+}
+.checkout_table table td button::-moz-focus-inner {border:0;}
+.checkout_table table td button:last-child{margin-bottom: 0px;}
+
+
+.checkout_table  tbody {
+    display:block;
+    max-height:300px;
+    overflow-y:auto;
+    scrollbar-color: #fea741 #25252500; scrollbar-width: thin;
+}
+.checkout_table  thead, .checkout_table  tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+
+#select_label{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+#select_label select{
+    font-size: 20px;
+    display: inline-block;
+    margin: 0;
+    outline: 0;
+    line-height: 1.2;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    padding-top: 1px;
+    color: #fea741;
+    border: 1px solid #fea741;
+    border-radius: 50px;
+    background:transparent;
+    padding-left: 14px;
+}
+
+#select_label:after {
+    pointer-events: none;
+    content: url(../images/jump_menu_dots.png);
+    position: absolute;
+    right: 14px;
+    top: calc(50% - 6px);
+}
+
+
+.alert {
+  padding: 20px;
+  background-color: #fea741;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.alert .alert_text{
+    font-size:25px;
+    color:#000;
+    font-family:stem-bold;
+}
+.alert img{
+    height: 28px;
+    top: 4px;
+    position: relative;
+}
+.closebtn {
+  margin-left: 15px;
+  color: 000;
+  font-weight: bold;
+  float: right;
+  font-size: 25px;
+  line-height: 33px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*order_status_detail*/
+
+
+
+.new_status_menu{width: 100%;}
+
+.order_summary{width: 100%;display: inline-block;border: 2px solid #3c3c40;}
+.order_summary .left_in_process_table{float: left;width: 50%;text-align: center;padding-top: 20px;}
+.order_summary .left_in_process_table table{width: 100%;}
+.order_summary .left_in_process_table th{font-size: 34px; color: #fea741;font-family: "Sans Culottes W01 Regular";padding: 15px;padding-bottom: 20px;width: 50%;}
+.order_summary .left_in_process_table td{font-size: 28px;color: #fff;font-family: "Stem W03 Regular";padding: 10px;}
+
+.order_summary .right_complete_table{float: left;width: 50%;text-align: center;padding-top: 20px;background-image: url(../images/completed_block_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;}
+.order_summary .right_complete_table table{width: 100%;}
+.order_summary .right_complete_table th{font-size: 34px; color: #fea741;font-family: "Sans Culottes W01 Regular";padding: 15px;padding-bottom: 20px;width: 50%;}
+.order_summary .right_complete_table td{font-size: 28px;color: #fff;font-family: "Stem W03 Regular";padding: 10px;}
+
+.order_summary table td button{   
+    width: 135px;height: 43px;line-height: 40px;
+    text-transform: uppercase;font-weight: 600;
+    background-color: #fea741;
+    color: #000;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 0;
+    font-family: "Stem W03 Regular";
+    outline: 0;
+    text-align: center;
+    margin-bottom: 15px;}
+.order_summary table td button:hover{
+    background-color: #d98e37;
+}
+.order_summary table td button::-moz-focus-inner {border:0;}
+.order_summary table td button:last-child{margin-bottom: 0px;}
+
+.order_status .new_status_menu{width: 100%;padding-bottom: 20px;}
+.order_status .new_status_menu ul {}
+.order_status .new_status_menu ul li{width: 49%;text-align: center;padding: 10px 0px;}
+.order_status .menu_categories ul li span{display: inline-block;}
+
+.left_in_process_table  {
+    display:block;
+    height:560px;
+    overflow-y:auto;
+    scrollbar-color: #fea741 #25252500;
+    scrollbar-width: none;
+}
+.left_in_process_table  thead, .left_in_process_table  tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+
+.right_complete_table  {
+    display:block;
+    height:560px;
+    overflow-y:auto;
+    scrollbar-color: #fea741 #25252500;
+    scrollbar-width: none;
+}
+.right_complete_table  thead, .right_complete_table  tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+
+
+
+
+
+
+/*Loader*/
+
+#overlay{   
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height:100%;
+    display: none;
+    background: rgba(0,0,0,0.7);
+}
+.cv-spinner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px #fff solid;
+    border-top: 5px #fea741 solid;
+    border-radius: 50%;
+    animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+.is-hide{
+    display:none;
+}
+
+
+.notification_icon {
+    background-color:#fea741;
+    position: absolute;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    margin: -10px -10px;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    line-height: 2em;
+}
+
+.add_more_block ::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.add_more_block ::-webkit-scrollbar-track {
+    background: #25252500;
+}
+
+
+.add_more_block ::-webkit-scrollbar-thumb {
+    background: #fea741;
+}
+
+
+.add_more_block ::-webkit-scrollbar-thumb:hover {
+    background: #e29337;
+}
+
+#select_label select option{
+    background: #08080b;
+    color: #fea741;
+}
+
+
+
+
+.cart_more_block .full{
+    padding-top: 40px;
+/*    float: right;
+    width: 81%;
+    box-sizing: border-box;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #fea741 #25252500; scrollbar-width: thin;*/
+}
+.cart_more_block .full span{color: #fff;font-size: 26px;font-family: "Sans Culottes W01 Regular";;padding-bottom: 20px;display: block;}
+.cart_more_block .full .topping_block{width: 100%;display: inline-block;padding-bottom: 20px;}
+.cart_more_block .full .topping_block .extra_topping{display: inline-block;width: 49%;margin-bottom: 10px;}
+.cart_more_block .full .topping_block .extra_topping_two{display: inline-block;}
+
+.cart_more_block .full .topping_block .extra_topping ul{
+   /* height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #fea741 #25252500; scrollbar-width: thin;*/
+}
+.cart_more_block .full .topping_block .extra_topping ul li{width: 46%;padding: 8px 7px;}
+
+.cart_more_block .full .pop_up_textarea{width: 40%;float: left;padding-left: 20px;}
+
+.cart_more_block .full .pop_up_textarea textarea{width: 100%;resize: none;outline: 0;border: 1px solid #fea741;background-color: transparent;    box-sizing: border-box; padding-left: 10px;padding: 10px;font-size: 20px;color: #fff;}
+
+.cart_more_block .full .pop_up_textarea textarea::placeholder{font-size: 20px;color: #fff;}
+
+.cart_more_block .full .pop_up_input_parent{width: 40%;float: left;}
+.cart_more_block .full .pop_up_input input{
+    width: 100%;
+    resize: none;
+    outline: 0;
+    border: 1px solid #fea741;
+    background-color:
+    transparent;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 20px;
+    color: #fff;
+    height: 55px;
+    margin-bottom: 20px;
+}
+.cart_more_block .full .pop_up_input input::placeholder{font-size: 20px;color: #fff;}
+
+.cart_more_block .full .pop_up_total_price{float: right;width: 15%;text-align: center;padding-top: 10px;}
+.cart_more_block .full .pop_up_total_price button{font-family: "Sans Culottes W01 Regular";padding: 5px 30px;
+background-color: #fea741;
+color: #000;
+font-size: 24px;
+border-radius: 50px;
+border: 0;
+font-weight: 600;
+margin-bottom: 20px;}
+.cart_more_block .right .pop_up_total_price span{display: block;font-size: 34px;color: #fff; font-family: "Sans Culottes W01 Regular";text-transform: uppercase;padding-bottom: 0px;}
+
+
+.order_table table .details-title{width: 30%}
+.order_table table .details{width: 90%; padding: 0px;}
+.order_table table td{width:  10%;}
+.order_table table td.showhr{ background: rgb(32, 23, 16); border-left: 5px solid #fea741; }
+.order_table table .details span{color: #fea741; font-weight: 300;}
+.order_table table .details tbody{height: auto; padding-left: 14px;}
+/*.order_table table .details tr{margin-bottom: 5px;}*/
+.order_table table .details tr{background-color: rgba(255,255,255,0.1);}
+.order_table table .details td{text-align: center}
+/*.order_table table td:nth-child(3) { font-weight: bold; background: rgb(32, 23, 16);}
+.order_table table td:nth-child(4) { font-weight: bold; background: rgb(32, 23, 16);}
+.order_table table td:nth-child(5) { font-weight: bold; background: rgb(32, 23, 16);}*/
