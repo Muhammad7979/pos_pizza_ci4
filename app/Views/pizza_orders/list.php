@@ -106,7 +106,7 @@
 												<td>
         <?php
         $deliveryTimestamp = strtotime($value->deliver_at);
-        $formattedDeliveryTime = date('%Y-%m-%d %h:%i:%s %A', $deliveryTimestamp);
+        $formattedDeliveryTime = date('Y-m-d h:i:s A l', $deliveryTimestamp);
 
         // Check if the delivery time is less than the current time
         $isExpired = strtotime('now') > $deliveryTimestamp;

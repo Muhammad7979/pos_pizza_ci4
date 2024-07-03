@@ -25,7 +25,7 @@ class Pizza_orders_list extends SecureController
 		$date = date('Y-m-d');
         $date = date("Y-m-d", strtotime($date));
 		$microtime = round(microtime($date) * 1000);
-       $currentDateTime = date('Y-m-d H:i:s');
+        $currentDateTime = date('Y-m-d H:i:s');
 		$person_id = $this->Employee->get_logged_in_employee_info()->person_id;
 		$store_id = $this->Employee->get_company_name($person_id,'counters')->store_id;
 		
