@@ -2,9 +2,8 @@
 
 if (!function_exists('show_report_if_allowed')) {
     function show_report_if_allowed($report_prefix, $report_name, $person_id, $permission_id = '')
-    {
+    {   
         $permission_id = empty($permission_id) ? 'reports_' . $report_name : $permission_id;
-
         if (emp_have_grant($permission_id, $person_id)) {
             show_report($report_prefix, $report_name, $permission_id);
         }
@@ -16,6 +15,7 @@ if (!function_exists('show_report_if_allowed')) {
 if (!function_exists('show_report')) {
     function show_report($report_prefix, $report_name, $lang_key = '')
     {
+        
         $CI = \Config\Services::codeigniter();
 
         // Error handling
@@ -23,7 +23,6 @@ if (!function_exists('show_report')) {
             echo 'Error: Invalid $grants data or CI instance not available.';
             return;
         }
-
         $lang_key = empty($lang_key) ? $report_name : $lang_key;
         $report_label = lang('reports_lang.'.$lang_key);
         $report_prefix = empty($report_prefix) ? '' : $report_prefix . '_';

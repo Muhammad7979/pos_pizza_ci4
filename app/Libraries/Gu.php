@@ -71,18 +71,18 @@ class Gu
 
     public function isServer()
     {
-        try {
-            $onlineDB = \Config\Database::connect('online');
-            $databaseName = $onlineDB->getDatabase(); // Get the name of the connected database
+        // try {
+            // $onlineDB = \Config\Database::connect('online');
+            // $databaseName = $onlineDB->getDatabase(); // Get the name of the connected database
 
-            if ($databaseName === 'pos_pizza') {
+            // if ($databaseName === 'pos_pizza') {
                 return true; // The connected database is 'tehzeeb_pos'
-            } else {
-                return false; // The connected database is not 'tehzeeb_pos'
-            }
-        } catch (\Throwable $th) {
-            return false;
-        }
+        //     } else {
+        //         return false; // The connected database is not 'tehzeeb_pos'
+        //     }
+        // } catch (\Throwable $th) {
+        //     return false;
+        // }
     }
 
 

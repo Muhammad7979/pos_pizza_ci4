@@ -29,7 +29,7 @@
                     <div class="list-group">
                         <?php
                         foreach ($grants as $grant) {
-                            if (!preg_match('/reports_(inventory|receivings)/', $grant['permission_id'])) {
+                            if (!preg_match('/reports_(inventory|receivings)/', $grant['permission_id']) && preg_match('/reports_/', $grant['permission_id'])) {
                                 show_report('graphical_summary', $grant['permission_id']);
                             }
                         }
@@ -52,7 +52,7 @@
                         foreach ($grants as $grant) {
                             if($gu->isServer() || $grant['permission_id'] == "reports_items"
                             || $grant['permission_id'] == "reports_sales"){
-                                if (!preg_match('/reports_(inventory|receivings)/', $grant['permission_id'])) {
+                                if (!preg_match('/reports_(inventory|receivings)/', $grant['permission_id']) && preg_match('/reports_/', $grant['permission_id'])) {
                                     show_report('summary', $grant['permission_id']);
                                 }
                             }

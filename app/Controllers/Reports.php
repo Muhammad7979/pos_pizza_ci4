@@ -1679,8 +1679,8 @@ $appData = new Appconfig();
 		// $store_name = $this->Employee->get_company_name($store_id,'stores')->company_name;
 		$branch_name = $this->db->table('branches')->get()->getResult();
 		$branch_code=='all' ? $branch = $branch_code : $branch = $branch_name[0]->name."-".$branch_code;
-		$counter_detail = $this->employeeModel->get_company_name($employee_id,'counters');
-		$store_name = $this->employeeModel->get_company_name($counter_detail->store_id,'stores')->company_name;
+		// $counter_detail = $this->employeeModel->get_company_name($employee_id,'counters');
+		// $store_name = $this->employeeModel->get_company_name($counter_detail->store_id,'stores')->company_name;
 		$item_from_name = lang('stock_reports_lang.reports_counter');
 		$company_name = 'All';
 		if($counter_data->category==3){
@@ -1711,7 +1711,7 @@ $appData = new Appconfig();
 			'data' => $tabular_data,
 			'start_date' => $start_date, 
 			'end_date' => $end_date, 
-			'store_name' => $store_name,
+			'store_name' => $branch,
 			'company_name' => $company_name,
 			'item_from_name' => $item_from_name,
 			'summary_data' => $this->xss_clean($model->getSummaryData(array('start_date' => $start_date, 'end_date' => $end_date, 'store_id' => $store_id)))

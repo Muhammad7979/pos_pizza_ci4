@@ -1,4 +1,4 @@
-<?php echo view("partial/header"); ?>
+<?php  echo view("partial/header"); ?>
 <div id="title_bar" class="btn-toolbar print_hide">
     <div class="inner_block">
         <div id="page_title">
